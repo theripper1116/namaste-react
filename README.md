@@ -43,6 +43,20 @@ Q8: - What exactly is JSX?
 A8: - JSX is nothing but JS with HTML like syntax. e.g, const heading = <h1> Hello There </h1>
 
 Q9: - How JSX code is converted into JS?
-A9: - Babel transpiler is responsible for converting the JSX into JS.
+A9: - Babel transpiler is responsible for converting the JSX into React.createElement and then this method returns an object which is then converted into HTML element by using root.render().
 
-Q10: - 
+Q10: - How many types of React components are there?
+A10: - Mainly there are two types of components in react: - 
+            1. Functional based components: - These include returning of JSX from a JavaScript function.
+                                              e.g., const FunctionalBasedComponent = () => {
+                                                    return (
+                                                      <h1>Welcome to functional component</h1>
+                                                    )
+                                                    }
+                                                    root.render(<FunctionalBasedComponent />);
+            2. Class based components: - These include returning of JSX from a JavaScript classes.
+
+Q11: - What is component composition?
+A11: - The insertion of any component inside any other component, then it is called component composition.
+
+Q12: - 
