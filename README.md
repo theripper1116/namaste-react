@@ -59,4 +59,17 @@ A10: - Mainly there are two types of components in react: -
 Q11: - What is component composition?
 A11: - The insertion of any component inside any other component, then it is called component composition.
 
-Q12: - 
+Q12: - How to create an React element?
+A12: - We can create an React element using React.createElement and it will accept three parameters
+       1. What type of element 
+       2. Attributes related to the element.
+       3. What should go inside this element
+       e.g., React.createElement("h1", {class="h1Heading"}, "HI I am inside H1 Heading");
+
+       We can also have nested elements inside any HTML element just like this
+       e.g., React.createElement("h1", {className:"h1Heading"}, "Hi I am inside H1 heading", React.createElement("h2", {className:"h2Heading"}, "HI I am inside H2 Heading"));
+       
+       and if we want to have multiple child under same parent, we can pass them as an array
+       e.g., React.createElement("h1", {className:"h1Heading"}, "Hi I am inside H1 heading", [React.createElement("h2", {className:"h2Heading"}, "HI I am inside H2 Heading"), React.createElement("h2", {className:"h2Heading"}, "HI I am inside H2 Heading")]);
+
+Q13: - 
