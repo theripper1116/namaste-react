@@ -33,7 +33,9 @@ const Body = () => {
         className="body-search"
         placeholder="Enter any restaurent name"
       ></textarea>
+      <div className="restaurent-card">
       <RestaurentList />
+      </div>
     </div>
   );
 };

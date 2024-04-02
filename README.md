@@ -72,4 +72,23 @@ A12: - We can create an React element using React.createElement and it will acce
        and if we want to have multiple child under same parent, we can pass them as an array
        e.g., React.createElement("h1", {className:"h1Heading"}, "Hi I am inside H1 heading", [React.createElement("h2", {className:"h2Heading"}, "HI I am inside H2 Heading"), React.createElement("h2", {className:"h2Heading"}, "HI I am inside H2 Heading")]);
 
-Q13: - 
+Q13: - What are props in React?
+A13: - Props are just arguments passed to the functional method in js, and when this function recieves arguments, it will be in form of js objects. 
+       e.g., const myFunc = (props) {
+            console.log(props);
+       };
+
+       <FunctionalComponent myName = "Milan", myAge = "24"/>
+
+       output: - {
+            myName: "Milan",
+            myAge: "24"
+       }
+
+Q14: - What is config driven UI?
+A14: - Controlling UI based on some data or configuration is known as config driven UI.
+
+Q15: - What does "Each prop should have a unique key" warning mean?
+A15: - It means that each rendered component should have a unique key and it can be defined using key attribute. Also, by implementing it, it helps in optimization of code and re-rendering becomes faster. NOTE: - WE must not use index's as keys.
+
+Q16: - 
