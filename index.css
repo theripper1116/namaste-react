@@ -1,47 +1,46 @@
 .header {
-    border: ridge;
-    display: flex;
-    align-items: center;
+  border: ridge;
+  display: flex;
+  align-items: center;
 }
 
 .logo-image {
-    width: 200px;
-    padding: 2px;
-    
+  width: 200px;
+  padding: 2px;
 }
 
 .header-items > ul {
-    display: flex;
-    margin: 5px;
+  display: flex;
+  margin: 5px;
 }
 
 .header-items > ul > li {
-    margin: 5px;
-    list-style-type: none;
-    font-size: large;
+  margin: 5px;
+  list-style-type: none;
+  font-size: large;
 }
 
 .header-items {
-    justify-content: right;
-    display: flex;
+  justify-content: right;
+  display: flex;
 }
 
 .body-search {
-    padding: 5px;
-    resize: none;
-    margin-top: 5px;
-    margin-left: 2px;
-    display: flex;
-    align-items: center;
+  padding: 5px;
+  resize: none;
+  margin-top: 5px;
+  margin-left: 2px;
+  display: flex;
+  align-items: center;
 }
 
 .restaurent-image {
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
 }
 
 .restaurent-list {
-    padding: 4px;
-    border: ridge;
-    width: 200px;
+  padding: 4px;
+  border: ridge;
+  width: 200px;
 }
