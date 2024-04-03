@@ -100,3 +100,13 @@ A16: - There are 2 types of exports used in JS
 
 Q17: - What are React Hooks?
 A17: - React Hooks are just normal js functions written by facebook developers.
+
+Q18: - What is React Algorithm/ Reconciliation Algorithm?
+A18: - The comparison of Virtual DOM with the actual DOM using DIFF ALGORITHM, so that React can compare the changes and updates only required section of HTML page.
+
+Q19: - What is virtual DOM?
+A19: - Virtual DOM is nothing but actual representation of DOM (React Elements).
+
+Q20: - What is React Fibre?
+A20: - React Fibre is a new way of doing comparison between virtual DOM and Actual DOM introduced in React 16.
+
