@@ -91,4 +91,12 @@ A14: - Controlling UI based on some data or configuration is known as config dri
 Q15: - What does "Each prop should have a unique key" warning mean?
 A15: - It means that each rendered component should have a unique key and it can be defined using key attribute. Also, by implementing it, it helps in optimization of code and re-rendering becomes faster. NOTE: - WE must not use index's as keys.
 
-Q16: - 
+Q16: - What are two kinds of exports used in js?
+A16: - There are 2 types of exports used in JS
+       1. Default export
+          e.g., export default varName/ FunctionName
+       2. Named export
+          e.g., export varName/ FunctionName
+
+Q17: - What are React Hooks?
+A17: - React Hooks are just normal js functions written by facebook developers.

@@ -1,9 +1,9 @@
+import { RES_IMAGE_LINK } from "../data/Links";
+
 const RestaurentCard = (resData) => {
   console.log(resData);
   const { name, cuisines, avgRating, cloudinaryImageId } = resData;
-  const stringForImage =
-    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-    { cloudinaryImageId };
+  const stringForImage = RES_IMAGE_LINK + { cloudinaryImageId };
   return (
     <div className="restaurent-list">
       <img
