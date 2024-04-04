@@ -110,3 +110,20 @@ A19: - Virtual DOM is nothing but actual representation of DOM (React Elements).
 Q20: - What is React Fibre?
 A20: - React Fibre is a new way of doing comparison between virtual DOM and Actual DOM introduced in React 16.
 
+Q21: - What is Monolith Architecture?
+A21: - In Monolith Architecture, we used to have only one service and in that service, we will do everything like, 
+       - makking API calls
+       - making DB connect
+       - write UI code
+       - write backend code
+       - etc.,
+
+Q22: - What is Micro Service Architecture?
+A22: - Unlike monolith architecture, we have different small programs/ services in which we do each task seperately like,
+       - makking API calls
+       - making DB connect
+       - write UI code
+       - write backend code
+       - etc.,
+
+Q23: - 
