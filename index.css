@@ -7,6 +7,12 @@
 .logo-image {
   width: 200px;
   padding: 2px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.logo-image:hover {
+  transform: scale(1.1);
 }
 
 .header-items > ul {
@@ -43,9 +49,17 @@
   padding: 4px;
   border: ridge;
   width: 200px;
-  background-color:lightgray;
+  background-color: rgb(88, 88, 88);
+  cursor: pointer;
 }
 
 .sort-btn {
-  margin: 4PX;
+  margin: 4px;
+  border: black;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sort-btn:hover {
+  transform: scale(1.01);
 }
