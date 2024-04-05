@@ -1,20 +1,27 @@
 import RestaurentCard from "./RestaurentCard";
-import RestaurentData from "../data/RestaurentData";
-import { useState } from "react";
+// import RestaurentData from "../data/RestaurentData";
+import { useEffect, useState } from "react";
 import { SWIGGY_API_URL } from "../data/Links";
 
 const Body = () => {
-  const [resStateData, setResStateData] = useState(RestaurentData);
+  const [resStateData, setResStateData] = useState([]);
+
   const fetchDataFromSwiggy = async () => {
     const data = await fetch(SWIGGY_API_URL);
     const jsonData = await data;
     const json = await jsonData.json();
-    console.log(json);
+    setResStateData(
+      json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+    );
   };
 
-  fetchDataFromSwiggy();
+  useEffect(() => {
+    fetchDataFromSwiggy();
+  }, []);
 
-  return (
+  return resStateData.length === 0 ? (
+    <h1>Loading....</h1>
+  ) : (
     <div className="body">
       <textarea
         className="body-search"
@@ -32,11 +39,13 @@ const Body = () => {
       >
         Click Here to sort best restaurent
       </button>
+
       <div className="restaurent-card">
         {resStateData?.map((data) => {
           console.log(data.info);
-          <RestaurentCard resData={data.info} />
+          <RestaurentCard key={data.info.id} resData={data.info} />;
         })}
+        {/* <RestaurentCard resData={resStateData[0].info} />; */}
       </div>
     </div>
   );

@@ -51,6 +51,11 @@
   width: 200px;
   background-color: rgb(88, 88, 88);
   cursor: pointer;
+  transition: 0.2s;
+}
+
+.restaurent-list:hover {
+  transform: scale(1.01);
 }
 
 .sort-btn {
