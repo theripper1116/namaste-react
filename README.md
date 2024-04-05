@@ -100,6 +100,9 @@ A16: - There are 2 types of exports used in JS
 
 Q17: - What are React Hooks?
 A17: - React Hooks are just normal js functions written by facebook developers.
+       There are mainly two hooks that are widely used inside React: - 
+              1. useState: - Mainly used when we want to store the data through which the rendering depends, i.e., data driven rendering.
+              2. useEffect: - This hooks is invoked whenever there is any change in the state variable, this will always be invoked after rendering is completed.
 
 Q18: - What is React Algorithm/ Reconciliation Algorithm?
 A18: - The comparison of Virtual DOM with the actual DOM using DIFF ALGORITHM, so that React can compare the changes and updates only required section of HTML page.
