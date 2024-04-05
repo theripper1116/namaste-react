@@ -43,9 +43,8 @@ const Body = () => {
       <div className="restaurent-card">
         {resStateData?.map((data) => {
           console.log(data.info);
-          <RestaurentCard key={data.info.id} resData={data.info} />;
+          return <RestaurentCard key={data.info.id} resData={data.info} />;
         })}
-        {/* <RestaurentCard resData={resStateData[0].info} />; */}
       </div>
     </div>
   );
