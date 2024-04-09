@@ -81,3 +81,7 @@
   flex-wrap: wrap;
   padding: 2px;
 }
+
+#root {
+  background-color: #d6dde3;
+}

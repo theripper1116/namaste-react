@@ -7,9 +7,9 @@ const Header = () => {
         <img className="logo-image" alt="header-logo" src={BRAND_LOGO} />
         <div className="header-items">
           <ul>
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Contact Us</li>
+            <li><h3>Home</h3></li>
+            <li><h3>About Us</h3></li>
+            <li><h3>Contact Us</h3></li>
           </ul>
         </div>
       </div>
