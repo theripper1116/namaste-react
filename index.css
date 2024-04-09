@@ -1,7 +1,8 @@
-.header {
+.header-logo {
   border: ridge;
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .logo-image {
@@ -17,6 +18,7 @@
 
 .header-items > ul {
   display: flex;
+  align-items: center;
   margin: 5px;
 }
 
@@ -29,6 +31,7 @@
 .header-items {
   justify-content: right;
   display: flex;
+  margin-left: auto;
 }
 
 .body-search {
@@ -46,12 +49,15 @@
 }
 
 .restaurent-list {
-  padding: 4px;
-  border: ridge;
+  padding: 10px;
   width: 200px;
-  background-color: rgb(88, 88, 88);
+  background-color: rgb(206, 205, 205);
   cursor: pointer;
   transition: 0.2s;
+  border: ridge;
+  display: block;
+  column-gap: 25px;
+  align-items: center;
 }
 
 .restaurent-list:hover {
@@ -60,11 +66,18 @@
 
 .sort-btn {
   margin: 4px;
-  border: black;
+  border: solid black;
   cursor: pointer;
   transition: 0.2s;
 }
 
 .sort-btn:hover {
   transform: scale(1.01);
+}
+
+.restaurent-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 2px;
 }
