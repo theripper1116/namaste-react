@@ -129,4 +129,19 @@ A22: - Unlike monolith architecture, we have different small programs/ services 
        - write backend code
        - etc.,
 
-Q23: - 
+Q23: - Explain React-Router-Dom?
+A23: - React-Router-DOM is a library through which we can have routing capabilities in our project.
+       We can install using npm i react-router-dom
+       we need to have our routing configuration ready in our .js file by importing it from react-router-dom as import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+       createBrowserRouter will return an array of object in which we define what will be the paths and configuration our project needs.
+       RouterProvider will be used to render the project inside root.
+       Outlet will be used to replace the component wherever Outlet is used.
+
+Q24: - What are the two types of routing?
+A24: - 1. Server Side Routing: - Server side routing means that HTML page requests the page from server and reloads the whole page.
+       2. Client Side Routing: - Client side routing means that HTML page has already got all the components and rerendering will be done from client's browser only and not from server.
+
+Q25: - How to catch error in React router?
+A25: - In order to catch error in React Router, we can use useRouteError and in this, we can display anything as useRouteError will return an object having all the details about the error and can be in corporated inside createBrowserRouter using key errorElement.
+
+Q26: - 
