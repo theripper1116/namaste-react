@@ -1,17 +1,18 @@
-import RestaurentCard from "./RestaurentCard";
-// import RestaurentData from "../data/RestaurentData";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+// import RestaurentData from "../data/RestaurentData";
 import { SWIGGY_API_URL } from "../data/Links";
+import RestaurentCard from "./RestaurentCard";
 
 const Body = () => {
   const [resStateData, setResStateData] = useState([]);
 
   const fetchDataFromSwiggy = async () => {
     const data = await fetch(SWIGGY_API_URL);
-    const jsonData = await data;
-    const json = await jsonData.json();
+    const jsonData = await data.json();
     setResStateData(
-      json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+      jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
     );
   };
 
@@ -42,8 +43,14 @@ const Body = () => {
 
       <div className="restaurent-card">
         {resStateData?.map((data) => {
-          {/* console.log(data.info); */}
-          return <RestaurentCard key={data.info.id} resData={data.info} />;
+          {
+            /* console.log(data.info); */
+          }
+          return (
+            <Link key={data.info.id} to={"/restaurants/" + data.info.id}>
+              <RestaurentCard resData={data.info} />;
+            </Link>
+          );
         })}
       </div>
     </div>

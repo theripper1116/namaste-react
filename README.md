@@ -144,4 +144,10 @@ A24: - 1. Server Side Routing: - Server side routing means that HTML page reques
 Q25: - How to catch error in React router?
 A25: - In order to catch error in React Router, we can use useRouteError and in this, we can display anything as useRouteError will return an object having all the details about the error and can be in corporated inside createBrowserRouter using key errorElement.
 
-Q26: - 
+Q26: - How to use dyanamic routing in react?
+A26: - We can use dynamic routing by declaring the path as : 
+       e.g., path: "/restaurents/:resID";
+       
+       and we can fetch the folowing the :resID using useParams hooks provided to us by react-router-dom.
+
+Q27: - 

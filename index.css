@@ -51,6 +51,7 @@
 .restaurent-list {
   padding: 10px;
   width: 200px;
+  height: 360px;
   background-color: rgb(206, 205, 205);
   cursor: pointer;
   transition: 0.2s;
@@ -84,4 +85,49 @@
 
 #root {
   background-color: #d6dde3;
+}
+
+.restaurent-menu-detail-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.restaurent-menu-detail {
+  padding: 10px;
+  width: 200px;
+  background-color: rgb(206, 205, 205);
+  cursor: pointer;
+  transition: 0.2s;
+  border: ridge;
+  display: block;
+  column-gap: 25px;
+  /* align-items: center; */
+  transition: 0.2s;
+  /* justify-content: center; */
+}
+
+.restaurent-menu-detail:hover {
+  transform: scale(1.01);
+}
+
+.restaurent-menu-image {
+  width: 200px;
+  height: 200px;
+}
+
+.restaurent-data-details {
+  display: flex;
+  justify-content: center;
+}
+
+.restaurent-data-offers {
+  display: flex;
+  justify-content: center;
+}
+
+.restaurent-menu-details > h3 { 
+  justify-content: center;
 }
