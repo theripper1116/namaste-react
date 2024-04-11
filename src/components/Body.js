@@ -34,7 +34,7 @@ const Body = () => {
             return val.info.avgRating > 4.5;
           });
           setResStateData(sortedData);
-          console.log(sortedData);
+          // console.log(sortedData);
         }}
       >
         Click Here to sort best restaurent
@@ -42,7 +42,7 @@ const Body = () => {
 
       <div className="restaurent-card">
         {resStateData?.map((data) => {
-          console.log(data.info);
+          {/* console.log(data.info); */}
           return <RestaurentCard key={data.info.id} resData={data.info} />;
         })}
       </div>

@@ -1,10 +1,10 @@
 import { RES_IMAGE_LINK } from "../data/Links";
 
 const RestaurentCard = ({ resData }) => {
-  console.log(resData);
+  // console.log(resData);
   const { name, cuisines, avgRating, cloudinaryImageId } = resData;
   const stringForImage = RES_IMAGE_LINK + cloudinaryImageId;
-  console.log(stringForImage);
+  // console.log(stringForImage);
   return (
     <div className="restaurent-list">
       <img
