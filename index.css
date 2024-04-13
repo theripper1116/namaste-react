@@ -131,3 +131,8 @@
 .restaurent-menu-details > h3 { 
   justify-content: center;
 }
+
+.user-detail {
+  padding: 10px;
+  border: solid rgb(206, 205, 205);
+}
