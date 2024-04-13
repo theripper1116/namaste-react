@@ -1,7 +1,12 @@
 import { DISHES_IMAGE_URL } from "../data/Links";
 
 const RestaurentMenuDetail = ({ restaurentMenuData }) => {
-  const { category, defaultPrice, name, imageId } = restaurentMenuData;
+  const {
+    category = "Not Available",
+    defaultPrice = "Not Available",
+    name = "Not Available",
+    imageId = "Not Available",
+  } = restaurentMenuData;
   return (
     <div className="restaurent-menu-detail">
       <img
@@ -12,7 +17,11 @@ const RestaurentMenuDetail = ({ restaurentMenuData }) => {
       <div className="restaurent-menu-details">
         <h3>{name}</h3>
         <h4>{category}</h4>
-        <h4>{defaultPrice}</h4>
+        {defaultPrice === NaN ? (
+          <h4>Prices not available</h4>
+        ) : (
+          <h4>Price: {defaultPrice / 100}</h4>
+        )}
       </div>
     </div>
   );

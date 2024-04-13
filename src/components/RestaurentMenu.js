@@ -34,7 +34,7 @@ const RestaurentMenu = () => {
     <div className="restaurent-data">
       <div className="restaurent-data-details">
         <h4>{restaurentData.name}</h4>
-        <h4>{restaurentData.avgRating}</h4>
+        <h4>Rating: {restaurentData.avgRating}</h4>
         <h4>Outlet: {restaurentData.areaName}</h4>
         <h4>{restaurentData.costForTwoMessage}</h4>
       </div>

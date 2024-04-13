@@ -48,7 +48,7 @@ const Body = () => {
           }
           return (
             <Link key={data.info.id} to={"/restaurants/" + data.info.id}>
-              <RestaurentCard resData={data.info} />;
+              <RestaurentCard resData={data.info} />
             </Link>
           );
         })}

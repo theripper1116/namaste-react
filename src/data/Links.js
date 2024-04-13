@@ -12,3 +12,5 @@ export const RES_FULL_MENU =
 
 export const DISHES_IMAGE_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/";
+
+export const GIT_HUB_USER_URL = "https://api.github.com/users/theripper1116";
