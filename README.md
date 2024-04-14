@@ -150,4 +150,65 @@ A26: - We can use dynamic routing by declaring the path as :
        
        and we can fetch the folowing the :resID using useParams hooks provided to us by react-router-dom.
 
-Q27: - 
+Q27: - What are React Class based component?
+A27: - React Class based component are nothing but classes that return a piece of JSX so that it can be rendered onto the web page.
+e.g., class <ClassName> extends React.Component{
+       constructor(props){
+              super(props);
+              this.state = {
+                     stateVariable: initial value,
+              }
+       }
+
+       render(){
+              {propsVar1, ...} = this.props;
+
+              return (
+                     <JSX />
+              )
+       }
+}
+
+Q28: - Why do we need read all props and declare state variables inside constructor?
+A28: - When a class based component is rendered onto the web page, the class gets instantiated and inside class the very thing that gets loaded is the constructor, so it is recomended to get every props and state variables at the starting when class is instantiated so that all props/state will be available throughout the class.
+
+Q29: - What is super() keyword inside constructor and why it is used?
+A29:- super() keyword is used to tell the js to set the props inside extended class, for now we have React.Component and props will be set inside React.Compoenent's constructor.
+
+Q30: - What is the React LifeCycle/ Explain React LifeCycle methods?
+A30: - ![alt text](image.png), Kindly refer this image. URL <[Complete Diagram for React LifeCycle](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)>
+       There are two phases in which a React component is rendered: - 
+              1. Render Phase: -
+                     1. contructor()
+                     2. render()
+              2. Commit Phase: - 
+                     1. Reconciliation phase
+                     2. componentDidMount() {in case of first render} 
+                        OR
+                        componentDidUpdate() {after subsequent renders(except first)}
+       When a component is unrendered or render completes, then componentWillUnmount() is called.
+
+Q31: - How can you update the state inside Class based component?
+A31: - To update state variables inside class based component, we can use
+       this.setState({
+              stateVariableName: <updated value>,
+       });
+
+Q32: - Comment on componentDidMount()?
+A32: - componentDidMount() renders at the end of render cycle in the commit phase. it has 2 parameters which are optional.
+componentDidMount(prevProps, prevState){
+
+};
+Here, prevProps and prevState will contain old values of respective props and state variables and can be accessed using prevProps.propsVariable and prevState.stateVariable.
+
+Q33: - Describe a use case for componentWillUnmount()?
+A33: - USE CASE: - 
+       Suppose we have a function call which will not stop or running continously as long as we are at that web page, inside componentDidMount() or componentDidUpdate(). So in this case, the method won't stop even when we jump to some other program, so in order to stop it, we'll use componentWillUnmount() so stop that process.
+
+Q34: - How can we stop a continously executed function inside useEffect()?
+A34: - We can return a method from callback functions in order to stop the execution of callback method.
+e.g., useEffect(()=>{
+       return();
+      },[])
+       the return() will exactly behave like componentWillUnmount();
+Q35: - 
