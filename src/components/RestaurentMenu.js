@@ -1,4 +1,4 @@
-import { RES_FULL_MENU } from "../data/Links";
+import { RES_FULL_MENU } from "../utils/Links";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 

@@ -1,4 +1,4 @@
-import { RES_IMAGE_LINK } from "../data/Links";
+import { RES_IMAGE_LINK } from "../utils/Links";
 
 const RestaurentCard = ({ resData }) => {
   // console.log(resData);

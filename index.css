@@ -34,13 +34,24 @@
   margin-left: auto;
 }
 
-.body-search {
+.body-search-section-textarea {
   padding: 5px;
   resize: none;
   margin-top: 5px;
   margin-left: 2px;
   display: flex;
   align-items: center;
+}
+
+.body-search-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.body-search-section-button {
+  margin-top: 5px;
+  margin-left: 5px;
+  cursor: pointer;
 }
 
 .restaurent-image {

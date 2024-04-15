@@ -1,4 +1,4 @@
-import { BRAND_LOGO } from "../data/Links";
+import { BRAND_LOGO } from "../utils/Links";
 import { Link } from "react-router-dom";
 
 const Header = () => {

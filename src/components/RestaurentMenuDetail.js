@@ -1,4 +1,4 @@
-import { DISHES_IMAGE_URL } from "../data/Links";
+import { DISHES_IMAGE_URL } from "../utils/Links";
 
 const RestaurentMenuDetail = ({ restaurentMenuData }) => {
   const {
