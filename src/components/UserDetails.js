@@ -1,6 +1,6 @@
 import React from "react";
 
-import { GIT_HUB_USER_URL } from "../data/Links";
+import { GIT_HUB_USER_URL } from "../utils/Links";
 class UserDetails extends React.Component {
   constructor(props) {
     super(props);

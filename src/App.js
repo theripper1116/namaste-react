@@ -1,13 +1,15 @@
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 import Header from "./components/Header";
 import Body from "./components/Body";
 import AboutUS from "./components/AboutUS";
-import ContactUS from "./components/ContactUS";
+// import ContactUS from "./components/ContactUS";
 import Error from "./components/Error";
 import RestaurentMenu from "./components/RestaurentMenu";
+
+const ContactUS = lazy(() => import("./components/ContactUS"));
 
 // this will return an object having all properties of the HTML element, there will be three arguments in this createElement(tagName, {attributes for defined HTML tag}, data that should go inside the defined tag).
 // const heading = React.createElement("h1", {className:"h1Heading"}, "Hi I am inside H1 heading", [React.createElement("h2", {className:"h2Heading"}, "HI I am inside H2 Heading"), React.createElement("h2", {className:"h2Heading"}, "HI I am inside H2 Heading")]);
@@ -44,7 +46,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/ContactUS",
-        element: <ContactUS />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <ContactUS />
+          </Suspense>
+        ),
       },
       {
         path: "/restaurants/:resID",

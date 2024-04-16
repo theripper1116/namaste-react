@@ -211,4 +211,24 @@ e.g., useEffect(()=>{
        return();
       },[])
        the return() will exactly behave like componentWillUnmount();
-Q35: - 
+
+Q35: - What are custom React Hooks?
+A35: - Custom React hooks are nothing but java script function which can be imported inside a component and uses it's functionality.
+Generally we use "use" before the function to indicate that it is an react custom hook.
+e.g., useFetchSwiggyData(){
+
+}
+
+Q36: - What is lazy loading in React?
+A36: - Lazy loading is defined as an concept by which we can make our application renders faster. Bu using lazy loading, we can optimize our application.
+By using Lazy Loading, we can split the code so that the code won't be loaded unless we need it to render it on the web page.
+We can start using lazy loading in the following manner: - 
+       1. We need to import the component from lazy() itself.
+              e.g., const ContactUS = lazy(() => import("./components/ContactUS"));
+       2. Then we'll this ContactUS component under Suspense HTML tag which is out of the box provided by the React.
+              e.g., <Suspense fallback={<h1>Loading...</h1>}>
+                            <ContactUS />
+                     </Suspense>
+       3. fallback is used because react may take sometime to load this ContactUS file and as we know that JS is a single threaded language, so JS will wait for none, and it throws the error on the page, to avoid this we can have fallback={} and we can return an JSX meanwhile the ContactUS js file loads.
+
+Q38: - 
