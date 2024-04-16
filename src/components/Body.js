@@ -1,24 +1,10 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-// import RestaurentData from "../data/RestaurentData";
-import { SWIGGY_API_URL } from "../utils/Links";
 import RestaurentCard from "./RestaurentCard";
+import useFetchSwiggyData from "../utils/useFetchSwiggyData";
 
 const Body = () => {
-  const [resStateData, setResStateData] = useState([]);
-
-  const fetchDataFromSwiggy = async () => {
-    const data = await fetch(SWIGGY_API_URL);
-    const jsonData = await data.json();
-    setResStateData(
-      jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
-    );
-  };
-
-  useEffect(() => {
-    fetchDataFromSwiggy();
-  }, []);
+  const resStateData = useFetchSwiggyData();
 
   return resStateData.length === 0 ? (
     <h1>Loading....</h1>

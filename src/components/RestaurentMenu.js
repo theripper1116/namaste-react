@@ -1,7 +1,8 @@
 import { RES_FULL_MENU } from "../utils/Links";
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
+// import useFetchRestaurentMenu from "../utils/useFetchRestaurentMenu";
 import RestaurentMenuDetail from "./RestaurentMenuDetail";
 
 const RestaurentMenu = () => {
@@ -9,10 +10,10 @@ const RestaurentMenu = () => {
   const [restaurentMenuData, setRestaurentMenuData] = useState([]);
 
   const { resID } = useParams();
-//   console.log(resID);
+  console.log(resID);
 
   const fetchRestaurentMenu = async () => {
-    const rawData = await fetch(RES_FULL_MENU+resID);
+    const rawData = await fetch(RES_FULL_MENU + resID);
     const data = await rawData.json();
     console.log(data);
     setRestaurentData(data?.data?.cards[2]?.card?.card?.info);
@@ -28,7 +29,16 @@ const RestaurentMenu = () => {
     fetchRestaurentMenu();
   }, []);
 
-  if (restaurentData.length === 0) return <h4>Loading...</h4>;
+  // // console.log(useFetchRestaurentMenu());
+  // const restaurentRawData = useFetchRestaurentMenu();
+  // const restaurentData =
+  //   restaurentRawData?.data?.cards[2]?.card?.card?.info;
+  // const restaurentMenuData =
+  //   restaurentRawData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR
+  //     ?.cards[2]?.card?.card?.itemCards;
+  // console.log(restaurentData);
+  // console.log(restaurentMenuData);
+  if (restaurentData?.length === 0) return <h4>Loading...</h4>;
   console.log(restaurentMenuData);
   return (
     <div className="restaurent-data">
