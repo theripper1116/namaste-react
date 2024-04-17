@@ -23,4 +23,15 @@ const RestaurentCard = ({ resData }) => {
   );
 };
 
+export const withAvgRating = (RestaurentCard) => {
+  return ({ resData }) => {
+    return (
+      <div>
+        <label className="best-rated-label">Best Rated Restaurent</label>
+        <RestaurentCard resData={resData}/>
+      </div>
+    );
+  };
+};
+
 export default RestaurentCard;

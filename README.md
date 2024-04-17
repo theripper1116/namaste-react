@@ -231,4 +231,5 @@ We can start using lazy loading in the following manner: -
                      </Suspense>
        3. fallback is used because react may take sometime to load this ContactUS file and as we know that JS is a single threaded language, so JS will wait for none, and it throws the error on the page, to avoid this we can have fallback={} and we can return an JSX meanwhile the ContactUS js file loads.
 
-Q38: - 
+Q38: - What is Heigher Order Component?
+A38: - Just like Heigher order function, a heigher component is just an JS function which takes an component as an argument and returns another component.

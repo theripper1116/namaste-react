@@ -1,3 +1,7 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
 .header-logo {
   border: ridge;
   display: flex;
@@ -52,6 +56,7 @@
   margin-top: 5px;
   margin-left: 5px;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .restaurent-image {
@@ -63,7 +68,7 @@
 .restaurent-list {
   padding: 10px;
   width: 200px;
-  height: 360px;
+  height: 400px;
   background-color: rgb(206, 205, 205);
   cursor: pointer;
   transition: 0.2s;
@@ -91,6 +96,7 @@
   border: solid black;
   cursor: pointer;
   transition: 0.2s;
+  border-radius: 8px;
 }
 
 .sort-btn:hover {
@@ -230,4 +236,14 @@
   flex-wrap: wrap;
   margin-left: 5px;
   font-size: 30px;
+}
+
+.best-rated-label {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  position: absolute;
+  color: white;
+  background-color: black;
+  margin-top: -4px;
+  border-radius: 8px;
 }

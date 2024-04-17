@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 
-import RestaurentCard from "./RestaurentCard";
+import RestaurentCard, { withAvgRating } from "./RestaurentCard";
 import useFetchSwiggyData from "../utils/useFetchSwiggyData";
 
 const Body = () => {
   const resStateData = useFetchSwiggyData();
+  const RestaurentCardWithLabel = withAvgRating(RestaurentCard);
 
   return resStateData.length === 0 ? (
     <h1>Loading....</h1>
@@ -51,11 +52,15 @@ const Body = () => {
       <div className="restaurent-card">
         {resStateData?.map((data) => {
           {
-            /* console.log(data.info); */
+            console.log(data.info);
           }
           return (
             <Link key={data?.info?.id} to={"/restaurants/" + data?.info?.id}>
-              <RestaurentCard resData={data?.info} />
+              {data?.info?.avgRating >= 4.1 ? (
+                <RestaurentCardWithLabel resData={data?.info}/>
+              ) : (
+                <RestaurentCard resData={data?.info} />
+              )}
             </Link>
           );
         })}

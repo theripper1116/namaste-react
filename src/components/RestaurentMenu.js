@@ -10,12 +10,12 @@ const RestaurentMenu = () => {
   const [restaurentMenuData, setRestaurentMenuData] = useState([]);
 
   const { resID } = useParams();
-  console.log(resID);
+  // console.log(resID);
 
   const fetchRestaurentMenu = async () => {
     const rawData = await fetch(RES_FULL_MENU + resID);
     const data = await rawData.json();
-    console.log(data);
+    // console.log(data);
     setRestaurentData(data?.data?.cards[2]?.card?.card?.info);
     setRestaurentMenuData(
       data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
@@ -39,7 +39,7 @@ const RestaurentMenu = () => {
   // console.log(restaurentData);
   // console.log(restaurentMenuData);
   if (restaurentData?.length === 0) return <h4>Loading...</h4>;
-  console.log(restaurentMenuData);
+  // console.log(restaurentMenuData);
   return (
     <div className="restaurent-data">
       <div className="restaurent-data-details">
