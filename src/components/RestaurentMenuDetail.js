@@ -8,19 +8,19 @@ const RestaurentMenuDetail = ({ restaurentMenuData }) => {
     imageId = "Not Available",
   } = restaurentMenuData;
   return (
-    <div className="restaurent-menu-detail">
+    <div className="card m-1" style={{ width: 200, height: 450 }}>
       <img
-        className="restaurent-menu-image"
         src={DISHES_IMAGE_URL + imageId}
-        alt="dish_image"
-      ></img>
-      <div className="restaurent-menu-details">
-        <h3>{name}</h3>
-        <h4>{category}</h4>
+        className="card-img-top"
+        alt="..."
+      />
+      <div className="card-body">
+        <h4>{name}</h4>
+        <h5>{category}</h5>
         {defaultPrice === NaN ? (
-          <h4>Prices not available</h4>
+          <h5>Prices not available</h5>
         ) : (
-          <h4>Price: {defaultPrice / 100}</h4>
+          <h5>Price: {defaultPrice / 100}</h5>
         )}
       </div>
     </div>

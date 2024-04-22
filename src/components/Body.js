@@ -55,7 +55,7 @@ const Body = () => {
             console.log(data.info);
           }
           return (
-            <Link key={data?.info?.id} to={"/restaurants/" + data?.info?.id}>
+            <Link className="text-decoration-none" key={data?.info?.id} to={"/restaurants/" + data?.info?.id}>
               {data?.info?.avgRating >= 4.1 ? (
                 <RestaurentCardWithLabel resData={data?.info}/>
               ) : (

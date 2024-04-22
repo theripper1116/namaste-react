@@ -7,11 +7,21 @@ const Header = () => {
       <div className="header-logo">
         <img className="logo-image" alt="header-logo" src={BRAND_LOGO} />
         <div className="header-items">
-          <ul>
-            <li><h3><Link to="/">Home</Link></h3></li>
-            <li><h3><Link to="/AboutUS">About Us</Link></h3></li>
-            <li><h3><Link to="ContactUS">Contact Us</Link></h3></li>
-          </ul>
+          <button className="btn btn-outline-light">
+            <Link className="text-decoration-none" to="/">
+              Home
+            </Link>
+          </button>
+          <button className="btn btn-outline-light">
+            <Link className="text-decoration-none" to="/AboutUS">
+              About Us
+            </Link>
+          </button>
+          <button className="btn btn-outline-light">
+            <Link className="text-decoration-none" to="ContactUS">
+              Contact Us
+            </Link>
+          </button>
         </div>
       </div>
     </div>
