@@ -22,7 +22,7 @@ class RestaurentMenuCategory extends React.Component {
               aria-expanded="false"
               aria-controls="flush-collapseOne"
             >
-              <b>{this.props.categoryName.title}</b>
+              <b>{this.props.categoryName.title}    ({this.props.categoryName.itemCards.length})</b>
             </button>
           </h4>
           <div
