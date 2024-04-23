@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 // import useFetchRestaurentMenu from "../utils/useFetchRestaurentMenu";
-import RestaurentMenuDetail from "./RestaurentMenuDetail";
+// import RestaurentMenuDetail from "./RestaurentMenuDetail";
+import RestaurentMenuCategory from "./RestaurentMenuCategory";
 
 const RestaurentMenu = () => {
   const [restaurentData, setRestaurentData] = useState([]);
@@ -37,7 +38,7 @@ const RestaurentMenu = () => {
   //   restaurentRawData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR
   //     ?.cards[2]?.card?.card?.itemCards;
   console.log(restaurentData);
-  // console.log(restaurentMenuData);
+  console.log(restaurentMenuData);
   if (restaurentData?.length === 0) return <h4>Loading...</h4>;
   // console.log(restaurentMenuData);
   return (
@@ -50,11 +51,11 @@ const RestaurentMenu = () => {
       </div>
       <div className="restaurent-data-offers">
         <h3>Deals For You!!</h3>
-        <div class="accordion accordion-flush" id="accordionFlushExample">
-          <div class="accordion-item">
-            <h4 class="accordion-header">
+        <div className="accordion accordion-flush" id="accordionFlushExample">
+          <div className="accordion-item">
+            <h4 className="accordion-header">
               <button
-                class="accordion-button collapsed"
+                className="accordion-button collapsed"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#flush-collapseOne"
@@ -68,10 +69,10 @@ const RestaurentMenu = () => {
             </h4>
             <div
               id="flush-collapseOne"
-              class="accordion-collapse collapse"
+              className="accordion-collapse collapse"
               data-bs-parent="#accordionFlushExample"
             >
-              <div class="accordion-body">
+              <div className="accordion-body">
                 {restaurentData?.aggregatedDiscountInfoV2?.descriptionList.map(
                   (data) => {
                     return <h5>{data.meta}</h5>;
@@ -82,13 +83,10 @@ const RestaurentMenu = () => {
           </div>
         </div>
       </div>
-      <div className="restaurent-menu-detail-card">
+      <div className="restaurent-menu-detail-category-card">
         {restaurentMenuData?.map((data) => {
           return (
-            <RestaurentMenuDetail
-              key={data.card.info.id}
-              restaurentMenuData={data.card.info}
-            />
+            <RestaurentMenuCategory categoryName={data.card.info.category} />
           );
         })}
       </div>

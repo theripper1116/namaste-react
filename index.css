@@ -78,6 +78,7 @@
   cursor: pointer;
   transition: 0.2s;
   border-radius: 8px;
+  margin-bottom: 20px;
 }
 
 .sort-btn:hover {
@@ -95,10 +96,7 @@
   background-color: #d6dde3;
 }
 
-.restaurent-menu-detail-card {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.restaurent-menu-detail-category-card {
   padding: 2px;
   cursor: pointer;
 }
@@ -217,6 +215,12 @@
 }
 
 #accordionFlushExample {
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-bottom: 30px;
+}
+
+#restuarent-menu-category {
   margin-left: 60px;
   margin-right: 60px;
   margin-bottom: 30px;
