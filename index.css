@@ -233,3 +233,9 @@
   margin-right: 60px;
   margin-bottom: 30px;
 }
+
+#restaurent-menu-detail-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

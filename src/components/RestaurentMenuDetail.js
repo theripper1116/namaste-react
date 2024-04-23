@@ -1,12 +1,12 @@
 import { DISHES_IMAGE_URL } from "../utils/Links";
 
-const RestaurentMenuDetail = ({ restaurentMenuData }) => {
+const RestaurentMenuDetail = ({restaurentMenuData}) => {
   const {
-    category = "Not Available",
-    defaultPrice = "Not Available",
+    price = "Not Available",
     name = "Not Available",
     imageId = "Not Available",
-  } = restaurentMenuData;
+    description = "Not Avaiable"
+  } = restaurentMenuData?.card?.info;
   return (
     <div className="card m-1" style={{ width: 200, height: 450 }}>
       <img
@@ -16,12 +16,8 @@ const RestaurentMenuDetail = ({ restaurentMenuData }) => {
       />
       <div className="card-body">
         <h4>{name}</h4>
-        <h5>{category}</h5>
-        {defaultPrice === NaN ? (
-          <h5>Prices not available</h5>
-        ) : (
-          <h5>Price: {defaultPrice / 100}</h5>
-        )}
+        <h5>{price}</h5>
+        <h5>{description}</h5>
       </div>
     </div>
   );

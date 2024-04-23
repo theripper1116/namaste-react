@@ -1,18 +1,17 @@
 import React from "react";
 
+import RestaurentMenuDetail from "./RestaurentMenuDetail";
+
 class RestaurentMenuCategory extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        categoryName: "Not Available"
+      categoryName: "Not Available",
     };
   }
   render() {
     return (
-        <div
-        className="accordion accordion-flush"
-        id="restuarent-menu-category"
-      >
+      <div className="accordion accordion-flush" id="restuarent-menu-category">
         <div className="accordion-item">
           <h4 className="accordion-header">
             <button
@@ -23,9 +22,7 @@ class RestaurentMenuCategory extends React.Component {
               aria-expanded="false"
               aria-controls="flush-collapseOne"
             >
-              <b>
-              {this.props.categoryName}
-              </b>
+              <b>{this.props.categoryName.title}</b>
             </button>
           </h4>
           <div
@@ -33,12 +30,12 @@ class RestaurentMenuCategory extends React.Component {
             className="accordion-collapse collapse"
             data-bs-parent="#accordionFlushExample"
           >
-            <div className="accordion-body">
-              {/* <RestaurentMenuDetail
-                key={data.card.info.id}
-                restaurentMenuData={data.card.info}
-              /> */}
-              
+            <div className="accordion-body" id="restaurent-menu-detail-card">
+              {this.props.categoryName.itemCards.map((val) => {
+                return (
+                  <RestaurentMenuDetail key={val.id} restaurentMenuData={val} />
+                );
+              })}
             </div>
           </div>
         </div>

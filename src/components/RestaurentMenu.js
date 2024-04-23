@@ -2,7 +2,7 @@ import { RES_FULL_MENU } from "../utils/Links";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-// import useFetchRestaurentMenu from "../utils/useFetchRestaurentMenu";
+import useFetchRestaurentMenu from "../utils/useFetchRestaurentMenu";
 // import RestaurentMenuDetail from "./RestaurentMenuDetail";
 import RestaurentMenuCategory from "./RestaurentMenuCategory";
 
@@ -19,11 +19,12 @@ const RestaurentMenu = () => {
     console.log(data);
     setRestaurentData(data?.data?.cards[2]?.card?.card?.info);
     setRestaurentMenuData(
-      data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-        ?.card?.itemCards
+      (data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards).filter(
+        (val) =>
+          val?.card?.card?.["@type"] ===
+          "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+      )
     );
-    // console.log(restaurentData);
-    // console.log(restaurentMenuData);
   };
 
   useEffect(() => {
@@ -32,13 +33,16 @@ const RestaurentMenu = () => {
 
   // // console.log(useFetchRestaurentMenu());
   // const restaurentRawData = useFetchRestaurentMenu();
-  // const restaurentData =
-  //   restaurentRawData?.data?.cards[2]?.card?.card?.info;
-  // const restaurentMenuData =
-  //   restaurentRawData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR
-  //     ?.cards[2]?.card?.card?.itemCards;
-  console.log(restaurentData);
-  console.log(restaurentMenuData);
+  // console.log(restaurentRawData);
+  // setRestaurentData(restaurentRawData?.data?.cards[2]?.card?.card?.info);
+  // setRestaurentMenuData(
+  //   (restaurentRawData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards)?.filter(
+  //     (val) =>
+  //       val?.card?.card?.["@type"] ===
+  //       "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+  //   )
+  // );
+
   if (restaurentData?.length === 0) return <h4>Loading...</h4>;
   // console.log(restaurentMenuData);
   return (
@@ -85,9 +89,7 @@ const RestaurentMenu = () => {
       </div>
       <div className="restaurent-menu-detail-category-card">
         {restaurentMenuData?.map((data) => {
-          return (
-            <RestaurentMenuCategory categoryName={data.card.info.category} />
-          );
+          return <RestaurentMenuCategory categoryName={data?.card?.card} />;
         })}
       </div>
     </div>
