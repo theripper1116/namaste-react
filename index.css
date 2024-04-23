@@ -85,6 +85,14 @@
   transform: scale(1.01);
 }
 
+.btn {
+  transition-duration: 0.4s;
+}
+
+.btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 .restaurent-card {
   display: flex;
   flex-direction: row;

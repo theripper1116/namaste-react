@@ -7,17 +7,17 @@ const Header = () => {
       <div className="header-logo">
         <img className="logo-image" alt="header-logo" src={BRAND_LOGO} />
         <div className="header-items">
-          <button className="btn btn-outline-light">
+          <button className="btn">
             <Link className="text-decoration-none" to="/">
               Home
             </Link>
           </button>
-          <button className="btn btn-outline-light">
+          <button className="btn">
             <Link className="text-decoration-none" to="/AboutUS">
               About Us
             </Link>
           </button>
-          <button className="btn btn-outline-light">
+          <button className="btn">
             <Link className="text-decoration-none" to="ContactUS">
               Contact Us
             </Link>
