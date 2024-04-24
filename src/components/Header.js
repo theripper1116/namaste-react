@@ -1,7 +1,18 @@
+import { useEffect, useState } from "react";
+
 import { BRAND_LOGO } from "../utils/Links";
 import { Link } from "react-router-dom";
+import {SWIGGY_API_URL} from "../utils/Links"
+import { LocationDelhi } from "../utils/Location";
 
 const Header = () => {
+
+  const [urlData, setURLData] = useState("");
+
+  useEffect(()=>{
+    setURLData(SWIGGY_API_URL);
+  }, []);
+
   return (
     <div className="header">
       <div className="header-logo">
@@ -22,7 +33,7 @@ const Header = () => {
               Contact Us
             </Link>
           </button>
-          <div className="dropdown">
+          {/* <div className="dropdown">
             <button
               className="btn btn-secondary dropdown-toggle"
               type="button"
@@ -33,32 +44,43 @@ const Header = () => {
             </button>
             <ul className="dropdown-menu">
               <li>
-                <a className="dropdown-item" href="#">
+                <button className="dropdown-item" onClick={()=>{
+                  const firstIndex = urlData.indexOf("lat");
+                  const secondIndex = urlData.indexOf("is-seo");
+                  const latLongitude = urlData.substring(firstIndex, secondIndex - 1);
+                  const tempArrayForLatLong = latLongitude.split("&");
+                  tempArrayForLatLong.map((data)=>{
+                    if(data[1] === "a")
+                    data = "lat=" + LocationDelhi.latitude;
+                    else data = "lng=" + LocationDelhi.longitude;
+                  });
+                  setURLData();
+                }}>
                   Delhi
-                </a>
+                </button>
               </li>
               <li>
-                <a className="dropdown-item" href="#">
+                <button className="dropdown-item">
                   Moradabad
-                </a>
+                </button>
               </li>
               <li>
-                <a className="dropdown-item" href="#">
+                <button className="dropdown-item">
                   Ghaziabad
-                </a>
+                </button>
               </li>
               <li>
-                <a className="dropdown-item" href="#">
+                <button className="dropdown-item">
                   Noida
-                </a>
+                </button>
               </li>
               <li>
-                <a className="dropdown-item" href="#">
+                <button className="dropdown-item">
                   Gurgaon
-                </a>
+                </button>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
