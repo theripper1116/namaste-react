@@ -2,7 +2,7 @@ import { RES_FULL_MENU } from "../utils/Links";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import useFetchRestaurentMenu from "../utils/useFetchRestaurentMenu";
+// import useFetchRestaurentMenu from "../utils/useFetchRestaurentMenu";
 // import RestaurentMenuDetail from "./RestaurentMenuDetail";
 import RestaurentMenuCategory from "./RestaurentMenuCategory";
 
@@ -88,8 +88,14 @@ const RestaurentMenu = () => {
         </div>
       </div>
       <div className="restaurent-menu-detail-category-card">
-        {restaurentMenuData?.map((data) => {
-          return <RestaurentMenuCategory categoryName={data?.card?.card} />;
+        {restaurentMenuData?.map((data, index) => {
+          return (
+            <RestaurentMenuCategory
+              categoryName={data?.card?.card}
+              key={data?.card?.card?.title}
+              index={index}
+            />
+          );
         })}
       </div>
     </div>
