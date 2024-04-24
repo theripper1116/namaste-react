@@ -22,6 +22,43 @@ const Header = () => {
               Contact Us
             </Link>
           </button>
+          <div className="dropdown">
+            <button
+              className="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Choose Location!!
+            </button>
+            <ul className="dropdown-menu">
+              <li>
+                <a className="dropdown-item" href="#">
+                  Delhi
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Moradabad
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Ghaziabad
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Noida
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Gurgaon
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
