@@ -5,11 +5,11 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import AboutUS from "./components/AboutUS";
-// import ContactUS from "./components/ContactUS";
 import Error from "./components/Error";
 import RestaurentMenu from "./components/RestaurentMenu";
 
 const ContactUS = lazy(() => import("./components/ContactUS"));
+const CitySearch = lazy(() => import("./components/CitySearch"));
 
 // this will return an object having all properties of the HTML element, there will be three arguments in this createElement(tagName, {attributes for defined HTML tag}, data that should go inside the defined tag).
 // const heading = React.createElement("h1", {className:"h1Heading"}, "Hi I am inside H1 heading", [React.createElement("h2", {className:"h2Heading"}, "HI I am inside H2 Heading"), React.createElement("h2", {className:"h2Heading"}, "HI I am inside H2 Heading")]);
@@ -24,6 +24,9 @@ const ContactUS = lazy(() => import("./components/ContactUS"));
 const AppLayout = () => {
   return (
     <>
+      <Suspense fallback={<h6>Loading....</h6>}>
+        <CitySearch />
+      </Suspense>
       <Header />
       <Outlet />
     </>

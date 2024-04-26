@@ -2,13 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { BRAND_LOGO } from "../utils/Links";
-import useRestaurentGeographicData from "../utils/useRestaurentGeographicData";
-
-export const getGeographicalDetails = () => {
-  const enteredCity = document.getElementById("floatingTextarea").value;
-  const getGeographicData = useRestaurentGeographicData(toString(enteredCity));
-  return getGeographicData;
-};
 
 const Header = () => {
   // let debounce = () => {
@@ -37,19 +30,6 @@ const Header = () => {
             <Link className="text-decoration-none" to="ContactUS">
               Contact Us
             </Link>
-          </button>
-          <div className="form-floating">
-            <textarea
-              className="form-control"
-              placeholder="Leave a comment here"
-              id="floatingTextarea"
-            ></textarea>
-            <label htmlFor="floatingTextarea" style={{ marginLeft: "5px" }}>
-              Enter City Name
-            </label>
-          </div>
-          <button className="btn" onClick={getGeographicalDetails}>
-            Search!!
           </button>
         </div>
       </div>

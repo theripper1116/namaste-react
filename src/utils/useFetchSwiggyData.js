@@ -1,5 +1,5 @@
 import { SWIGGY_API_URL } from "./Links";
-import { getGeographicalDetails } from "../components/Header";
+import { getGeographicalDetails } from "../components/CitySearch";
 
 import { useEffect, useState } from "react";
 
