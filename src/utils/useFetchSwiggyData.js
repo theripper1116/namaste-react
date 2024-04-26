@@ -1,4 +1,6 @@
 import { SWIGGY_API_URL } from "./Links";
+import { getGeographicalDetails } from "../components/Header";
+
 import { useEffect, useState } from "react";
 
 const useFetchSwiggyData = () => {

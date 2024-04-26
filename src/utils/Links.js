@@ -14,3 +14,9 @@ export const DISHES_IMAGE_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/";
 
 export const GIT_HUB_USER_URL = "https://api.github.com/users/theripper1116";
+
+export const ADDRESS_URL =
+  "https://www.swiggy.com/dapi/misc/place-autocomplete?input=";
+
+export const RESTAURENT_GEOGRAPHIC_DETAILS =
+  "https://www.swiggy.com/dapi/misc/address-recommend?place_id=";

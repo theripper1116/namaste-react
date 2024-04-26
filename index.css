@@ -239,3 +239,8 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+#floatingTextarea {
+  resize: none;
+  margin-left: 12px;
+}
