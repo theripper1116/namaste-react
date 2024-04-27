@@ -2,7 +2,7 @@ import useRestaurentGeographicData from "../utils/useRestaurentGeographicData";
 
 export const getGeographicalDetails = () => {
   const enteredCity = document.getElementById("floatingTextarea").value;
-  const getGeographicData = useRestaurentGeographicData(toString(enteredCity));
+  const getGeographicData = useRestaurentGeographicData(enteredCity);
   return getGeographicData;
 };
 

@@ -9,7 +9,8 @@ const useFetchSwiggyData = () => {
     const data = await fetch(SWIGGY_API_URL);
     const jsonData = await data.json();
     setResStateData(
-      jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+      jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
     );
   };
   useEffect(() => {
