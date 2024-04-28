@@ -210,16 +210,16 @@
   position: absolute;
   color: white;
   background-color: black;
-  margin-top: -20px;
+  margin-top: -25px;
   border-radius: 8px;
 }
 
 .card:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
 .card {
-  transition: 0.4s;
+  transition: 0.3s;
 }
 
 #accordionFlushExample {

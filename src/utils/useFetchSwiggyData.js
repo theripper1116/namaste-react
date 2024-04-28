@@ -1,9 +1,10 @@
-import { SWIGGY_API_URL } from "./Links";
-import { getGeographicalDetails } from "../components/CitySearch";
+import { useEffect, useState, useContext } from "react";
 
-import { useEffect, useState } from "react";
+import RestaurentListContext from "./RestaurentListContext";
+// import { getGeographicalDetails } from "../components/CitySearch";
 
 const useFetchSwiggyData = () => {
+  const { SWIGGY_API_URL } = useContext(RestaurentListContext);
   const [resStateData, setResStateData] = useState([]);
   const fetchDataFromSwiggy = async () => {
     const data = await fetch(SWIGGY_API_URL);

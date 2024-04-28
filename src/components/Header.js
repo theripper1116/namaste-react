@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import CitySearch from "./CitySearch";
 import { BRAND_LOGO } from "../utils/Links";
 
 const Header = () => {
@@ -31,6 +32,7 @@ const Header = () => {
               Contact Us
             </Link>
           </button>
+          <CitySearch />
         </div>
       </div>
     </div>
