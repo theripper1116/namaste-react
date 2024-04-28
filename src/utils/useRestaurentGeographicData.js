@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { ADDRESS_URL, RESTAURENT_GEOGRAPHIC_DETAILS } from "../utils/Links";
 
 const useRestaurentGeographicData = () => {
-  const [latituedLongitudinalData, setLatituedLongitudinalData] = useState();
+  const [latitudeLongitudinalData, setLatituedLongitudinalData] = useState();
   const [cityList = setCityList] = useState("");
 
   const enteredCity = document.getElementById("floatingTextarea").value;
@@ -28,7 +28,7 @@ const useRestaurentGeographicData = () => {
       RESTAURENT_GEOGRAPHIC_DETAILS + cityID
     );
     const geographicalJSONData = await geographicalData.json();
-    console.log(cityID);
+    // console.log(cityID);
     setLatituedLongitudinalData(
       geographicalJSONData?.data[0]?.geometry?.location
     );
