@@ -16,7 +16,9 @@ const useFetchSwiggyData = () => {
   };
   useEffect(() => {
     fetchDataFromSwiggy();
+    console.log("inside first useEffect");
   }, []);
+
   return resStateData;
 };
 

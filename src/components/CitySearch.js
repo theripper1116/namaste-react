@@ -23,7 +23,10 @@ const CitySearch = () => {
     const enteredCity = document.getElementById("staticBackdropLabel1").value;
     const idData = await fetch(ADDRESS_URL + enteredCity);
     const idJsonData = await idData.json();
-    setCityLocationList(idJsonData?.data);
+    setTimeout(() => {
+      setCityLocationList(idJsonData?.data);
+    }, 1000);
+
     // setCityList(
     //   `<button
     //     type="button"
@@ -144,7 +147,7 @@ const CitySearch = () => {
             Go
           </button>
         </div>
-        {cityLocationList.length === null ? (
+        {cityLocationList.length === 0 ? (
           <h6>Loading....</h6>
         ) : (
           cityLocationList.map((displayItem) => {
