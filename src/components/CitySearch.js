@@ -20,7 +20,7 @@ const CitySearch = () => {
   const [cityLocationList, setCityLocationList] = useState([]);
 
   const getIDForCity = async () => {
-    const enteredCity = document.getElementById("floatingTextarea").value;
+    const enteredCity = document.getElementById("staticBackdropLabel1").value;
     const idData = await fetch(ADDRESS_URL + enteredCity);
     const idJsonData = await idData.json();
     setCityLocationList(idJsonData?.data);
@@ -102,7 +102,7 @@ const CitySearch = () => {
   return (
     <div>
       <button
-        class="btn btn-primary"
+        className="btn btn-primary"
         type="button"
         data-bs-toggle="offcanvas"
         data-bs-target="#staticBackdrop"
@@ -118,18 +118,18 @@ const CitySearch = () => {
       </button>
 
       <div
-        class="offcanvas offcanvas-end"
+        className="offcanvas offcanvas-end"
         data-bs-backdrop="static"
-        tabindex="-1"
+        tabIndex="-1"
         id="staticBackdrop"
         aria-labelledby="staticBackdropLabel"
       >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="staticBackdropLabel">
+        <div className="offcanvas-header">
+          <h5 className="offcanvas-title" id="staticBackdropLabel">
             <textarea
               className="form-control"
               placeholder="Enter City"
-              id="staticBackdropLabel"
+              id="staticBackdropLabel1"
             ></textarea>
           </h5>
           <button

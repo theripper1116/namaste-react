@@ -11,7 +11,7 @@ const Body = () => {
     <h1>Loading....</h1>
   ) : (
     <div className="body">
-      <div className="body-search-section">
+      {/* <div className="body-search-section">
         <input
           className="body-search-section-textarea"
           placeholder="Enter any restaurent name"
@@ -46,7 +46,7 @@ const Body = () => {
         }}
       >
         Click Here to sort best restaurent
-      </button>
+      </button> */}
 
       <div className="restaurent-card">
         {resStateData?.map((data) => {
