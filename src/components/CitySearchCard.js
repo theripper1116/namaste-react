@@ -1,7 +1,8 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { RESTAURENT_GEOGRAPHIC_DETAILS } from "../utils/Links";
 import RestaurentListContext from "../utils/RestaurentListContext";
+import useFetchSwiggyData from "../utils/useFetchSwiggyData";
 
 const CitySearchCard = ({ displayItem }) => {
   const { place_id, description } = displayItem;
@@ -16,9 +17,7 @@ const CitySearchCard = ({ displayItem }) => {
     setLatituedLongitudinalData(
       geographicalJSONData?.data[0]?.geometry?.location
     );
-    console.log(SWIGGY_API_URL);
-    <RestaurentListContext.Provider value={{SWIGGY_API_URL: modifySwiggyURL()}} />;
-    console.log(SWIGGY_API_URL);
+    return modifySwiggyURL();
   };
 
   modifySwiggyURL = () => {
@@ -38,13 +37,14 @@ const CitySearchCard = ({ displayItem }) => {
     );
     return changeLngOfSwiggyURL;
   };
+
   return (
     <div>
       <button
         type="button"
         className="btn"
         onClick={() => {
-          getLatitudeLongitudeForCity(place_id);
+          useFetchSwiggyData(getLatitudeLongitudeForCity(place_id));
         }}
       >
         {description}

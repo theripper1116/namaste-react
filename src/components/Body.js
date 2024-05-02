@@ -4,7 +4,7 @@ import RestaurentCard, { withAvgRating } from "./RestaurentCard";
 import useFetchSwiggyData from "../utils/useFetchSwiggyData";
 
 const Body = () => {
-  const resStateData = useFetchSwiggyData();
+  const resStateData = useFetchSwiggyData(null);
   const RestaurentCardWithLabel = withAvgRating(RestaurentCard);
 
   return resStateData.length === 0 ? (
