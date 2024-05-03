@@ -9,11 +9,12 @@ const RestaurentMenuDetail = ({ restaurentMenuData }) => {
     name = "Not Available",
     imageId = "Not Available",
     description = "Not Avaiable",
+    id = "Not Available",
   } = restaurentMenuData?.card?.info;
 
   const dispatch = useDispatch();
   const addItemToDispatcher = () => {
-    dispatch(addItem(name));
+    dispatch(addItem({ dishName: name, dishPrice: price, dishId: id }));
   };
   return (
     <div className="card m-1" style={{ width: 200 }}>

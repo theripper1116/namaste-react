@@ -1,15 +1,41 @@
-import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-class Cart extends React.Component {
-  //   constructor() {}
+import { clearCart } from "../utils/appStoreSlices/cartSlice";
 
-  render() {
-    return (
-      <>
-        <h3>This is coming from Cart</h3>
-      </>
-    );
-  }
-}
+const Cart = () => {
+  const cartItems = useSelector((store) => store.cart.items);
+
+  const dispatch = useDispatch();
+  const cleanCart = () => {
+    dispatch(clearCart());
+  };
+
+  if (cartItems.length === 0) return <h4>Add Some items to Cart to view</h4>;
+
+  return (
+    <div>
+      <div>
+        <button className="btn" onClick={cleanCart}>
+          Clear Cart
+        </button>
+      </div>
+      {cartItems?.map((data) => {
+        return (
+          <div className="list-group">
+            <a className="list-group-item list-group-item-action list-group-item-secondary">
+              <h6>{data.dishName}</h6>
+              <h6>
+                ₹
+                {data.dishPrice != "Not Available"
+                  ? data.dishPrice / 100
+                  : "Not Available"}
+              </h6>
+            </a>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 export default Cart;
