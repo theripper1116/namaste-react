@@ -2,11 +2,14 @@ import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
+import { Provider } from "react-redux";
+
 import Header from "./components/Header";
 import Body from "./components/Body";
 import AboutUS from "./components/AboutUS";
 import Error from "./components/Error";
 import RestaurentMenu from "./components/RestaurentMenu";
+import appStore from "./utils/appStore";
 
 const ContactUS = lazy(() => import("./components/ContactUS"));
 
@@ -23,8 +26,10 @@ const ContactUS = lazy(() => import("./components/ContactUS"));
 const AppLayout = () => {
   return (
     <>
-      <Header />
-      <Outlet />
+      <Provider store={appStore}>
+        <Header />
+        <Outlet />
+      </Provider>
     </>
   );
 };
