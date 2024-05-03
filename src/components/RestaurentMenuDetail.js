@@ -1,4 +1,7 @@
+import { useDispatch } from "react-redux";
+
 import { DISHES_IMAGE_URL } from "../utils/Links";
+import { addItem } from "../utils/appStoreSlices/cartSlice";
 
 const RestaurentMenuDetail = ({ restaurentMenuData }) => {
   const {
@@ -7,6 +10,11 @@ const RestaurentMenuDetail = ({ restaurentMenuData }) => {
     imageId = "Not Available",
     description = "Not Avaiable",
   } = restaurentMenuData?.card?.info;
+
+  const dispatch = useDispatch();
+  const addItemToDispatcher = () => {
+    dispatch(addItem(name));
+  };
   return (
     <div className="card m-1" style={{ width: 200 }}>
       <div className="card-header">
@@ -21,7 +29,9 @@ const RestaurentMenuDetail = ({ restaurentMenuData }) => {
         {price != "Not Available" ? <h5>₹{price / 100}</h5> : <h5>{price}</h5>}
         <h5>{description}</h5>
       </div>
-      <button className="btn p-2 mb-3">Add To Cart!!!</button>
+      <button className="btn p-2 mb-3" onClick={addItemToDispatcher}>
+        Add To Cart!!!
+      </button>
     </div>
   );
 };

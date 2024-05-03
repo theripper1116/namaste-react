@@ -15,9 +15,7 @@ const Header = () => {
   //   }, 800);
   // };
 
-  const cartItems = useSelector((store) => {
-    store.cart.items;
-  });
+  const cartItems = useSelector((store) => store.cart.items);
 
   console.log(cartItems);
 
@@ -42,13 +40,18 @@ const Header = () => {
             </Link>
           </button>
           <button className="btn text-lg font-weight-bold">
-          <label>
-            {/* <p className="text-small">{cartItems.length}</p> */}
-          </label>
-          Cart
+            <img
+              width="35"
+              height="35"
+              src="https://img.icons8.com/dotty/80/shopping-cart.png"
+              alt="shopping-cart"
+            />
+            <label className="cart-length">
+              <p className="text-small">{cartItems.length}</p>
+            </label>
           </button>
-          <CitySearch />
         </div>
+        <CitySearch />
       </div>
     </div>
   );

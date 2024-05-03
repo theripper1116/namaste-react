@@ -105,13 +105,14 @@ const CitySearch = () => {
   return (
     <div>
       <button
-        className="btn btn-primary"
+        className="btn"
         type="button"
         data-bs-toggle="offcanvas"
         data-bs-target="#staticBackdrop"
         aria-controls="staticBackdrop"
+        style={{marginLeft: "auto"}}
       >
-        Search City{" "}
+        Search City
         <img
           width="24"
           height="24"

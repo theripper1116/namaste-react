@@ -24,7 +24,7 @@
 .text-decoration-none {
   color: black;
   cursor: pointer;
-  background-color: #d6dde3;  
+  background-color: #d6dde3;
   text-shadow: black;
   font-size: 20px;
 }
@@ -90,7 +90,8 @@
 }
 
 .btn:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .restaurent-card {
@@ -243,4 +244,9 @@
 #floatingTextarea {
   resize: none;
   margin-left: 12px;
+}
+
+.cart-length {
+  position: absolute;
+  margin-top: -10px
 }
