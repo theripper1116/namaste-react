@@ -39,17 +39,19 @@ const Header = () => {
               Contact Us
             </Link>
           </button>
-          <button className="btn text-lg font-weight-bold">
-            <img
-              width="35"
-              height="35"
-              src="https://img.icons8.com/dotty/80/shopping-cart.png"
-              alt="shopping-cart"
-            />
-            <label className="cart-length">
-              <p className="text-small">{cartItems.length}</p>
-            </label>
-          </button>
+          <Link to="Cart">
+            <button className="btn text-lg font-weight-bold">
+              <img
+                width="35"
+                height="35"
+                src="https://img.icons8.com/dotty/80/shopping-cart.png"
+                alt="shopping-cart"
+              />
+              <label className="cart-length">
+                <p className="text-small">{cartItems.length}</p>
+              </label>
+            </button>
+          </Link>
         </div>
         <CitySearch />
       </div>

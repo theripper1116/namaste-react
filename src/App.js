@@ -12,6 +12,7 @@ import RestaurentMenu from "./components/RestaurentMenu";
 import appStore from "./utils/appStore";
 
 const ContactUS = lazy(() => import("./components/ContactUS"));
+const Cart = lazy(() => import("./components/Cart"));
 
 // this will return an object having all properties of the HTML element, there will be three arguments in this createElement(tagName, {attributes for defined HTML tag}, data that should go inside the defined tag).
 // const heading = React.createElement("h1", {className:"h1Heading"}, "Hi I am inside H1 heading", [React.createElement("h2", {className:"h2Heading"}, "HI I am inside H2 Heading"), React.createElement("h2", {className:"h2Heading"}, "HI I am inside H2 Heading")]);
@@ -59,6 +60,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurants/:resID",
         element: <RestaurentMenu />,
+      },
+      {
+        path: "/cart",
+        element: (
+          <Suspense fallback={<h6>Loading....</h6>}>
+            <Cart />
+          </Suspense>
+        ),
       },
     ],
   },
