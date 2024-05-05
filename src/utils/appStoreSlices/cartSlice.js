@@ -10,7 +10,6 @@ const cartSlice = createSlice({
       const { payload } = action;
       console.log(payload);
       state.items.push(payload);
-      // state.defaultPrice.push(action.payload);
     },
     removeItem: (state) => {
       state.items.pop();
@@ -18,9 +17,18 @@ const cartSlice = createSlice({
     clearCart: (state) => {
       state.items.length = 0;
     },
+    modifyCart: (state, action) => {
+      const { payload } = action;
+      state.items.map((val) => {
+        console.log(val);
+        if (payload.id === val.dishId) {
+          val.dishCount = val.dishCount + 1;
+        }
+      });
+    },
   },
 });
 
-export const { addItem, removeItem, clearCart } = cartSlice.actions;
+export const { addItem, removeItem, clearCart, modifyCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

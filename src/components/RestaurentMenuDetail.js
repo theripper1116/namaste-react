@@ -1,9 +1,11 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { DISHES_IMAGE_URL } from "../utils/Links";
-import { addItem } from "../utils/appStoreSlices/cartSlice";
+import { addItem, modifyCart } from "../utils/appStoreSlices/cartSlice";
 
 const RestaurentMenuDetail = ({ restaurentMenuData }) => {
+  const cartItems = useSelector((store) => store.cart.items);
+
   const {
     price = "Not Available",
     name = "Not Available",
@@ -14,7 +16,51 @@ const RestaurentMenuDetail = ({ restaurentMenuData }) => {
 
   const dispatch = useDispatch();
   const addItemToDispatcher = () => {
-    dispatch(addItem({ dishName: name, dishPrice: price, dishId: id }));
+    let checker = true;
+    if (cartItems.length != 0) {
+      for (let i = 0; i < cartItems.length; i++) {
+        if (cartItems[i].dishId === id) {
+          dispatch(modifyCart(id));
+          checker = false;
+          break;
+        }
+      }
+      if (checker) {
+        dispatch(
+          addItem({
+            dishName: name,
+            dishPrice: price / 100,
+            dishCount: 1,
+            dishId: id,
+          })
+        );
+      }
+      // cartItems.map((val) => {
+      //   // console.log(val.dishId);
+      //   if (val.dishId === id) {
+      //     dispatch(modifyCart(id));
+      //   }
+      // });
+    } else {
+      dispatch(
+        addItem({
+          dishName: name,
+          dishPrice: price / 100,
+          dishCount: 1,
+          dishId: id,
+        })
+      );
+    }
+
+    // const addItemToDispatcher = () => {
+    //   dispatch(
+    //     addItem({
+    //       dishName: name,
+    //       dishPrice: price / 100,
+    //       dishCount: 1,
+    //       dishId: id,
+    //     })
+    //   );
   };
   return (
     <div className="card m-1" style={{ width: 200 }}>

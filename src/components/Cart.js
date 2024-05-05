@@ -5,6 +5,7 @@ import { clearCart } from "../utils/appStoreSlices/cartSlice";
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
 
+  console.log(cartItems[0]);
   const dispatch = useDispatch();
   const cleanCart = () => {
     dispatch(clearCart());
@@ -30,6 +31,7 @@ const Cart = () => {
                   ? data.dishPrice / 100
                   : "Not Available"}
               </h6>
+              <h6>{data.dishCount}</h6>
             </a>
           </div>
         );
