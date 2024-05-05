@@ -17,10 +17,10 @@ const CitySearchCard = ({ displayItem }) => {
     setLatituedLongitudinalData(
       geographicalJSONData?.data[0]?.geometry?.location
     );
-    return modifySwiggyURL();
+    modifySwiggyURL();
   };
 
-  modifySwiggyURL = () => {
+  const modifySwiggyURL = () => {
     let changeLatOfSwiggyURL = SWIGGY_API_URL.replace(
       SWIGGY_API_URL.slice(
         SWIGGY_API_URL.indexOf("?") + 5,

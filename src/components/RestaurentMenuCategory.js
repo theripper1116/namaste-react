@@ -18,9 +18,9 @@ class RestaurentMenuCategory extends React.Component {
               className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseOne"
+              data-bs-target={"#flush-collapse"+this.props.index}
               aria-expanded="false"
-              aria-controls="flush-collapseOne"
+              aria-controls={"#flush-collapse"+this.props.index}
             >
               <b>
                 {this.props.categoryName.title} (
@@ -29,7 +29,7 @@ class RestaurentMenuCategory extends React.Component {
             </button>
           </h4>
           <div
-            id="flush-collapseOne"
+            id={"flush-collapse"+ this.props.index}
             className="accordion-collapse collapse"
             data-bs-parent="#accordionFlushExample"
           >
