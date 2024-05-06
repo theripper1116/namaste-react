@@ -20,12 +20,14 @@ const RestaurentMenuDetail = ({ restaurentMenuData }) => {
     if (cartItems.length != 0) {
       for (let i = 0; i < cartItems.length; i++) {
         if (cartItems[i].dishId === id) {
-          dispatch(modifyCart(id));
+          console.log(cartItems[i].dishId);
+          dispatch(modifyCart([id, "increment"]));
           checker = false;
           break;
         }
       }
       if (checker) {
+        console.log("inside checker logic");
         dispatch(
           addItem({
             dishName: name,
@@ -42,6 +44,7 @@ const RestaurentMenuDetail = ({ restaurentMenuData }) => {
       //   }
       // });
     } else {
+      console.log("inside insertion logic");
       dispatch(
         addItem({
           dishName: name,

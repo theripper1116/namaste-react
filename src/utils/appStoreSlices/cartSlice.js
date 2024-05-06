@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
   name: "cart",
@@ -8,7 +8,7 @@ const cartSlice = createSlice({
   reducers: {
     addItem: (state, action) => {
       const { payload } = action;
-      console.log(payload);
+      // console.log(payload);
       state.items.push(payload);
     },
     removeItem: (state) => {
@@ -19,10 +19,14 @@ const cartSlice = createSlice({
     },
     modifyCart: (state, action) => {
       const { payload } = action;
-      state.items.map((val) => {
-        console.log(val);
-        if (payload.id === val.dishId) {
+      state.items.map((val, index) => {
+        if (payload[0] === val.dishId && payload[1] === "increment") {
           val.dishCount = val.dishCount + 1;
+        } else if (payload[0] === val.dishId && payload[1] === "decrement") {
+          val.dishCount = val.dishCount - 1;
+          if (val.dishCount === 0) {
+            state.items.splice(index, 1);
+          }
         }
       });
     },
