@@ -5,7 +5,6 @@ import { clearCart, modifyCart } from "../utils/appStoreSlices/cartSlice";
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
 
-  console.log(cartItems[0]);
   const dispatch = useDispatch();
   const cleanCart = () => {
     dispatch(clearCart());
