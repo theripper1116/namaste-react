@@ -5,14 +5,17 @@ class UserDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: "",
       avatar_url: "",
       html_url: "",
     };
   }
   fetchUserDetailFromGitHub = async () => {
-    const rawData = await fetch(GIT_HUB_USER_URL);
+    const rawData = await fetch(GIT_HUB_USER_URL + this.props.userName);
     const data = await rawData.json();
+    console.log(data);
     this.setState({
+      name: data.name,
       avatar_url: data.avatar_url,
       html_url: data.html_url,
     });
@@ -21,17 +24,17 @@ class UserDetails extends React.Component {
     this.fetchUserDetailFromGitHub();
   }
   render() {
-    const { name } = this.props;
-    const { avatar_url, html_url } = this.state;
+    const { name, avatar_url, html_url } = this.state;
     return (
-      <div className="user-detail-card">
-        <img className="user-detail-avatar-image" src={avatar_url}></img>
-        <div className="user-detail-section">
-          <h4>{name}</h4>
-          <h4>{html_url}</h4>
-          <h4>Contact: @theripper1116</h4>
+      <>
+        <div className="user-detail-card">
+          <img className="user-detail-avatar-image" src={avatar_url}></img>
+          <div className="user-detail-section">
+            <h4>{name}</h4>
+            <h4>{html_url}</h4>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }
