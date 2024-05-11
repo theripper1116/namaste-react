@@ -5,16 +5,34 @@ import { BrowserRouter } from "react-router-dom";
 
 import Body from "../Body";
 import fetch from "../mocks/mockFunc";
+import { FetchData } from "../mocks/mockData";
 
-it("Should load Body Component with text Loading ...", async () => {
-  await act(async () => {
-    render(
-      <BrowserRouter>
-        <Body />
-      </BrowserRouter>
-    );
+describe("Should check the Body Component", () => {
+  it("Should load Body Component checking the heading count", async () => {
+    await act(async () => {
+      render(
+        <BrowserRouter>
+          <Body />
+        </BrowserRouter>
+      );
+    });
+
+    const heading = screen.getAllByRole("heading");
+    expect(heading.length).toBe(3*(FetchData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      ?.restaurants).length);
   });
 
-  const heading = screen.getAllByRole("heading");
-  expect(heading.length).toBe(60);
+  it("Should load Body Component with text Loading ...", async () => {
+    await act(async () => {
+      render(
+        <BrowserRouter>
+          <Body />
+        </BrowserRouter>
+      );
+    });
+
+    const image = screen.getAllByRole("img");
+    expect(image.length).toBe((FetchData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      ?.restaurants).length);
+  });
 });
