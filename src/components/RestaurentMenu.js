@@ -16,7 +16,6 @@ const RestaurentMenu = () => {
   const fetchRestaurentMenu = async () => {
     const rawData = await fetch(RES_FULL_MENU + resID);
     const data = await rawData.json();
-    console.log(data);
     setRestaurentData(data?.data?.cards[2]?.card?.card?.info);
     setRestaurentMenuData(
       (data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards).filter(
