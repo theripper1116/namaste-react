@@ -29,7 +29,7 @@ const Cart = () => {
       </div>
       {cartItems?.map((data) => {
         return (
-          <div className="list-group">
+          <div className="list-group" data-testid="cart-item-list">
             <a className="list-group-item list-group-item-action list-group-item-secondary">
               <h6>{data.dishName}</h6>
 
